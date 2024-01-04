@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "955625201514",
+    "project_id": "gpay-b5249",
+    "storage_bucket": "gpay-b5249.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:955625201514:android:fc987986176dd482648f13",
+        "android_client_info": {
+          "package_name": "com.example.gpay"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCZE0Q1wyAZZaecxybKPeW61s1-hFa172U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
