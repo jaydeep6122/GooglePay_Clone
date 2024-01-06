@@ -14,6 +14,7 @@ class _businessState extends State<business> {
       height: 150,
       child: GridView.builder(
           itemCount: 4,
+          physics: NeverScrollableScrollPhysics(),
           gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 4,
           ),

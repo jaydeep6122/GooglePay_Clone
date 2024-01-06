@@ -1,6 +1,9 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:get/get_navigation/src/extension_navigation.dart';
+import 'package:gpay/chatui/chatui.dart';
 import 'package:http/http.dart' as http;
 
 class people extends StatefulWidget {
@@ -42,6 +45,7 @@ class _peopleState extends State<people> {
             height: 220,
             child: GridView.builder(
                 itemCount: 8,
+                physics: NeverScrollableScrollPhysics(),
                 gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 4,
                 ),
@@ -51,25 +55,41 @@ class _peopleState extends State<people> {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       index <= 6
-                          ? CircleAvatar(
-                              minRadius: 30,
-                              backgroundImage: NetworkImage(
-                                  "${peopledatalist[index]["picture"]["thumbnail"]}"),
-                            )
-                          : CircleAvatar(
-                              backgroundColor: Colors.grey,
-                              minRadius: 30,
+                          ? GestureDetector(
+                              onTap: () async {
+                                print("${peopledatalist[index]["name"]["first"]}" +
+                                    "${peopledatalist[index]["name"]["last"]}");
+                                await Get.to(chatui(
+                                  name: "${peopledatalist[index]["name"]["first"]} " +
+                                      "${peopledatalist[index]["name"]["last"]}",
+                                  phone: "${peopledatalist[index]["phone"]}",
+                                  pic:
+                                      "${peopledatalist[index]["picture"]["thumbnail"]}",
+                                ));
+                              },
                               child: CircleAvatar(
-                                backgroundColor: Colors.white,
-                                minRadius: 29,
-                                child: IconButton(
-                                    iconSize: 40,
-                                    onPressed: () {},
-                                    icon: const Icon(
-                                      Icons.keyboard_arrow_down,
-                                      color: Colors.blue,
-                                    )),
-                              )),
+                                minRadius: 30,
+                                foregroundImage: NetworkImage(
+                                    "${peopledatalist[index]["picture"]["thumbnail"]}"),
+                              ),
+                            )
+                          : GestureDetector(
+                              onTap: () {},
+                              child: CircleAvatar(
+                                  backgroundColor: Colors.grey,
+                                  minRadius: 30,
+                                  child: CircleAvatar(
+                                    backgroundColor: Colors.white,
+                                    minRadius: 29,
+                                    child: IconButton(
+                                        iconSize: 40,
+                                        onPressed: () {},
+                                        icon: const Icon(
+                                          Icons.keyboard_arrow_down,
+                                          color: Colors.blue,
+                                        )),
+                                  )),
+                            ),
                       index <= 6
                           ? Text("${peopledatalist[index]["name"]["first"]}")
                           : const Text("More")

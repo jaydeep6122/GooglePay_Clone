@@ -27,18 +27,24 @@ class _adsState extends State<ads> {
               children: [
                 Container(
                     decoration: BoxDecoration(
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.grey.withOpacity(0.5),
+                            spreadRadius: 1,
+                            blurRadius: 2,
+                            offset: Offset(0, 2),
+                          )
+                        ],
                         borderRadius: BorderRadius.circular(30),
                         color: Colors.white),
                     width: MediaQuery.of(context).size.width * 0.75,
                     height: MediaQuery.of(context).size.width * 0.12,
                     child: TextField(
                       decoration: InputDecoration(
-                        hintText: "Welcome Back",
-                        enabledBorder: OutlineInputBorder(
-                          borderSide: BorderSide(
-                              width: 1, color: Colors.grey), //<-- SEE HERE
-                          borderRadius: BorderRadius.circular(50.0),
-                        ),
+                        border: InputBorder.none,
+                        prefixIcon: Icon(Icons.search),
+                        hintText: "Pay by name or phone number",
+                        hintStyle: TextStyle(fontSize: 13),
                       ),
                     )),
                 const CircleAvatar(

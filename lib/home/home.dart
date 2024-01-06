@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:gpay/home/ads.dart';
 import 'package:gpay/home/billsandrecharge.dart';
 import 'package:gpay/home/business.dart';
+import 'package:gpay/home/managemoney.dart';
 import 'package:gpay/home/offersandrewards.dart';
 import 'package:gpay/home/payment.dart';
 import 'package:gpay/home/people.dart';
@@ -36,24 +37,22 @@ class _homeState extends State<home> {
 
             // UPI id
             Center(
-                child: Card(
-              child: Container(
-                  child: const Text(
-                    "UPI ID : jd6122@oksbi",
-                    style: TextStyle(fontSize: 10),
-                  ),
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 20, vertical: 5)),
-              shadowColor: Colors.grey,
-              color: const Color.fromARGB(255, 237, 237, 237),
-            )),
-            SizedBox(
-              height: MediaQuery.of(context).size.height * 0.02,
-            ),
+                child: Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(50),
+                      color: const Color.fromARGB(255, 244, 250, 253),
+                    ),
+                    padding:
+                        const EdgeInsets.symmetric(horizontal: 20, vertical: 6),
+                    child: const Text(
+                      "UPI ID : jd6122@oksbi",
+                      style: TextStyle(fontSize: 10),
+                    ))),
+
             //All the people column
             Container(
-              child: const Text("People", style: TextStyle(fontSize: 18)),
               padding: const EdgeInsets.only(left: 20),
+              child: const Text("People", style: TextStyle(fontSize: 18)),
             ),
 
             const people(),
@@ -62,36 +61,60 @@ class _homeState extends State<home> {
             ),
             // Business Payment
             Container(
+              padding: const EdgeInsets.only(left: 20, top: 20),
               child: const Text("Businesses", style: TextStyle(fontSize: 18)),
-              padding: const EdgeInsets.only(left: 20),
             ),
+
             const business(),
             Container(
+              padding: const EdgeInsets.only(left: 20),
               child: const Text("Bills & Recharge",
                   style: TextStyle(fontSize: 18)),
-              padding: const EdgeInsets.only(left: 20),
+            ),
+            SizedBox(
+              height: MediaQuery.of(context).size.height * 0.02,
             ),
             const billsandrecharge(),
             Center(
                 child: Container(
-                    padding: EdgeInsets.all(20),
+                    padding: const EdgeInsets.all(20),
                     child: TextButton(
                         onPressed: () {},
-                        child: Text(
-                          "See all",
-                          style: TextStyle(fontSize: 10),
-                        ),
                         style: TextButton.styleFrom(
                           shape: RoundedRectangleBorder(
-                              side: BorderSide(color: Colors.grey),
+                              side: const BorderSide(color: Colors.grey),
                               borderRadius: BorderRadius.circular(20)),
+                        ),
+                        child: const Text(
+                          "See all",
+                          style: TextStyle(fontSize: 10),
                         )))),
+
             Container(
+              padding: const EdgeInsets.only(left: 20),
               child: const Text("Offers & rewards",
                   style: TextStyle(fontSize: 18)),
-              padding: const EdgeInsets.only(left: 20),
             ),
-            offersandrewards()
+            SizedBox(
+              height: MediaQuery.of(context).size.height * 0.02,
+            ),
+            const offersandrewards(),
+
+            SizedBox(
+              height: MediaQuery.of(context).size.height * 0.02,
+            ),
+            Container(
+              padding: const EdgeInsets.only(left: 20),
+              child: const Text("Manage your Money",
+                  style: TextStyle(fontSize: 18)),
+            ),
+            SizedBox(
+              height: MediaQuery.of(context).size.height * 0.02,
+            ),
+            const managemoney(),
+            SizedBox(
+              height: MediaQuery.of(context).size.height * 0.02,
+            ),
           ],
         ),
       ),

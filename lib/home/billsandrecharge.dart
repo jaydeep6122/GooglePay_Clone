@@ -16,11 +16,13 @@ class _billsandrechargeState extends State<billsandrecharge> {
           child: Column(
             children: [
               Container(
+                decoration: BoxDecoration(
+                    shape: BoxShape.circle, color: Colors.blue[50]),
                 width: MediaQuery.of(context).size.width * 0.15,
                 height: MediaQuery.of(context).size.height * 0.07,
                 child: IconButton(
                   style: IconButton.styleFrom(
-                      backgroundColor: const Color.fromARGB(255, 211, 230, 246),
+                      backgroundColor: Color.fromARGB(255, 47, 79, 105),
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(15))),
                   iconSize: MediaQuery.of(context).size.height * 0.025,
@@ -43,6 +45,8 @@ class _billsandrechargeState extends State<billsandrecharge> {
           child: Column(
             children: [
               Container(
+                decoration: BoxDecoration(
+                    shape: BoxShape.circle, color: Colors.blue[50]),
                 width: MediaQuery.of(context).size.width * 0.15,
                 height: MediaQuery.of(context).size.height * 0.07,
                 child: IconButton(
@@ -70,6 +74,8 @@ class _billsandrechargeState extends State<billsandrecharge> {
           child: Column(
             children: [
               Container(
+                decoration: BoxDecoration(
+                    shape: BoxShape.circle, color: Colors.blue[50]),
                 width: MediaQuery.of(context).size.width * 0.15,
                 height: MediaQuery.of(context).size.height * 0.07,
                 child: IconButton(
@@ -97,6 +103,8 @@ class _billsandrechargeState extends State<billsandrecharge> {
           child: Column(
             children: [
               Container(
+                decoration: BoxDecoration(
+                    shape: BoxShape.circle, color: Colors.blue[50]),
                 width: MediaQuery.of(context).size.width * 0.15,
                 height: MediaQuery.of(context).size.height * 0.07,
                 child: IconButton(
