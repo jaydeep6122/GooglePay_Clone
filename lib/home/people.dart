@@ -17,11 +17,15 @@ class _peopleState extends State<people> {
   var url = Uri.parse("https://randomuser.me/api/?results=50");
   List peopledatalist = [];
   bool isLoading = true;
+  double count = 6;
+  double countheight = 220;
   @override
   void initState() {
     super.initState();
     peopledatalist = [];
     isLoading = true;
+    count = 6;
+    countheight = 220;
     peopledata();
   }
 
@@ -42,9 +46,9 @@ class _peopleState extends State<people> {
             child: CircularProgressIndicator(),
           )
         : Container(
-            height: 220,
+            height: countheight,
             child: GridView.builder(
-                itemCount: 8,
+                itemCount: 24,
                 physics: NeverScrollableScrollPhysics(),
                 gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 4,
@@ -54,7 +58,7 @@ class _peopleState extends State<people> {
                       child: Column(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      index <= 6
+                      index <= count
                           ? GestureDetector(
                               onTap: () async {
                                 print("${peopledatalist[index]["name"]["first"]}" +
@@ -64,13 +68,13 @@ class _peopleState extends State<people> {
                                       "${peopledatalist[index]["name"]["last"]}",
                                   phone: "${peopledatalist[index]["phone"]}",
                                   pic:
-                                      "${peopledatalist[index]["picture"]["thumbnail"]}",
+                                      "${peopledatalist[index]["picture"]["large"]}",
                                 ));
                               },
                               child: CircleAvatar(
                                 minRadius: 30,
                                 foregroundImage: NetworkImage(
-                                    "${peopledatalist[index]["picture"]["thumbnail"]}"),
+                                    "${peopledatalist[index]["picture"]["large"]}"),
                               ),
                             )
                           : GestureDetector(
@@ -83,16 +87,35 @@ class _peopleState extends State<people> {
                                     minRadius: 29,
                                     child: IconButton(
                                         iconSize: 40,
-                                        onPressed: () {},
-                                        icon: const Icon(
-                                          Icons.keyboard_arrow_down,
-                                          color: Colors.blue,
-                                        )),
+                                        onPressed: () {
+                                          if (count == 6) {
+                                            setState(() {
+                                              count = 22;
+                                              countheight = 650;
+                                            });
+                                          } else {
+                                            setState(() {
+                                              count = 6;
+                                              countheight = 220;
+                                            });
+                                          }
+                                        },
+                                        icon: count == 6
+                                            ? const Icon(
+                                                Icons.keyboard_arrow_down,
+                                                color: Colors.blue,
+                                              )
+                                            : const Icon(
+                                                Icons.keyboard_arrow_up,
+                                                color: Colors.blue,
+                                              )),
                                   )),
                             ),
-                      index <= 6
+                      index <= count
                           ? Text("${peopledatalist[index]["name"]["first"]}")
-                          : const Text("More")
+                          : count == 6
+                              ? const Text("More")
+                              : const Text("Less")
                     ],
                   ));
                 }),

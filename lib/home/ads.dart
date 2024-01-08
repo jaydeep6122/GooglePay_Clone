@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get_core/get_core.dart';
+import 'package:get/get_navigation/get_navigation.dart';
+import 'package:gpay/profile/profile.dart';
 
 class ads extends StatefulWidget {
   const ads({super.key});
@@ -47,9 +50,14 @@ class _adsState extends State<ads> {
                         hintStyle: TextStyle(fontSize: 13),
                       ),
                     )),
-                const CircleAvatar(
-                  backgroundImage: NetworkImage(
-                      "https://img.freepik.com/premium-photo/portrait-cheerful-bearded-arabic-guy-posing-urban-area_116547-70796.jpg"),
+                GestureDetector(
+                  onTap: () {
+                    Get.to(profile());
+                  },
+                  child: CircleAvatar(
+                    backgroundImage: NetworkImage(
+                        "https://img.freepik.com/premium-photo/portrait-cheerful-bearded-arabic-guy-posing-urban-area_116547-70796.jpg"),
+                  ),
                 )
               ],
             ),
