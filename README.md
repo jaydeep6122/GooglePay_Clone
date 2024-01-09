@@ -1,16 +1,18 @@
-# gpay
+# Google Pay Clone
 
-A new Flutter project.
+A Flutter project that replicates the functionality and design of Google Pay. This application serves as a demonstration of building a android mobile app using Flutter, with a focus on simplicity, responsiveness, and user-friendly design.
 
-## Getting Started
+## Features
 
-This project is a starting point for a Flutter application.
+- **API**: People Section is fetching with API.
+- **Transaction History**: View a detailed history of all transactions made within the app.
+- **Material Design**: Follow Google's Material Design guidelines for a cohesive and visually appealing UI.
 
-A few resources to get you started if this is your first Flutter project:
+## Screenshots
+![Application_Screen_Recording](https://github.com/jaydeep6122/GooglePay_Clone/blob/main/Screenshots/Video.mp4)
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+![Home Screen](https://github.com/jaydeep6122/GooglePay_Clone/blob/main/Screenshots/Screenshot_20240109_221526.jpg)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+![Payment Screen](https://github.com/jaydeep6122/GooglePay_Clone/blob/main/Screenshots/Screenshot_20240109_221534.jpg)
+
+![Profile_Screen](https://github.com/jaydeep6122/GooglePay_Clone/blob/main/Screenshots/Screenshot_20240109_221552.jpg)
