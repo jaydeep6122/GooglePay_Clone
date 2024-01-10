@@ -9,12 +9,18 @@ A Flutter project that replicates the functionality and design of Google Pay. Th
 - **Material Design**: Follow Google's Material Design guidelines for a cohesive and visually appealing UI.
 
 ## Screenshots
+
+### Application_Screen_Recording
 ![Application_Screen_Recording](https://github.com/jaydeep6122/GooglePay_Clone/blob/main/Screenshots/Video.mp4)
 
+### Home Screen
 ![Home Screen](https://github.com/jaydeep6122/GooglePay_Clone/blob/main/Screenshots/Screenshot_20240109_221526.jpg)
 
+### Payment Screen
 ![Payment Screen](https://github.com/jaydeep6122/GooglePay_Clone/blob/main/Screenshots/Screenshot_20240109_221534.jpg)
 
+### Profile_Screen
 ![Profile_Screen](https://github.com/jaydeep6122/GooglePay_Clone/blob/main/Screenshots/Screenshot_20240109_221552.jpg)
 
+### QR_Scan
 ![QR_Scan](https://github.com/jaydeep6122/GooglePay_Clone/blob/main/Screenshots/QRScanner.jpg)
